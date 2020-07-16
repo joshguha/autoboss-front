@@ -8,7 +8,8 @@ import Register from "./components/auth/Register";
 import Header from "./components/layout/Header";
 import UserContext from "./contexts/UserContext";
 import PrivateRoute from "./routers/PrivateRoute";
-import Dashboard from "./components/pages/Dashboard.js";
+import Dashboard from "./components/pages/Dashboard";
+import NotFound from "./components/pages/NotFound";
 
 export default function App() {
     const [userData, setUserData] = useState({
@@ -59,6 +60,7 @@ export default function App() {
                                 path="/dashboard"
                                 component={Dashboard}
                             />
+                            <Route component={NotFound} />
                         </Switch>
                     </div>
                 </UserContext.Provider>

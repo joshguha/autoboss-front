@@ -26,7 +26,6 @@ export default function Login() {
                 token: loginRes.data.token,
                 user: loginRes.data.user,
             });
-
             localStorage.setItem("auth-token", loginRes.data.token);
             history.push("/dashboard");
         } catch (e) {
@@ -37,11 +36,7 @@ export default function Login() {
     return (
         <div className="page">
             <h2>Log in</h2>
-            {error && (
-                <ErrorNotice
-                    message={error}
-                />
-            )}
+            {error && <ErrorNotice message={error} />}
             <form className="form" onSubmit={submit}>
                 <label htmlFor="login-email">Email</label>
                 <input
