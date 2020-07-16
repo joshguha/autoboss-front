@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ErrorNotice(props) {
     return (
-        <div className="error-notice">
+        <div>
             <span>{props.message}</span>
         </div>
     );

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Route } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
-import NotLoggedIn from "../components/layout/NotLoggedIn";
+import LoginForm from "../components/auth/LoginForm";
 
 export default function PrivateRoute({ component: Component, ...rest }) {
     const { userData } = useContext(UserContext);
-    
+
     return (
         <Route
             {...rest}
@@ -15,7 +15,7 @@ export default function PrivateRoute({ component: Component, ...rest }) {
                         <Component {...props} />
                     </>
                 ) : (
-                    <NotLoggedIn />
+                    <LoginForm />
                 )
             }
         />

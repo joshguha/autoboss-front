@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
 
 export default function AuthOptions() {
     const { userData, setUserData } = useContext(UserContext);
     const history = useHistory();
+    let location = useLocation();
 
     const register = () => history.push("/register");
     const login = () => history.push("/login");
+    const dashboard = () => history.push("dashboard");
     const logout = () => {
         setUserData({
             token: undefined,
@@ -19,16 +21,27 @@ export default function AuthOptions() {
         history.push("/");
     };
 
-    return (
-        <nav>
-            {userData.user ? (
-                <button onClick={logout}>Log out</button>
-            ) : (
+    const renderHeaderLinks = () => {
+        if (userData.user) {
+            if (location.pathname === "/dashboard") {
+                return <button onClick={logout}>Log out</button>;
+            } else {
+                return (
+                    <>
+                        <button onClick={dashboard}>Dashboard</button>
+                        <button onClick={logout}>Log out</button>
+                    </>
+                );
+            }
+        } else {
+            return (
                 <>
                     <button onClick={register}>Register</button>
                     <button onClick={login}>Log in</button>
                 </>
-            )}
-        </nav>
-    );
+            );
+        }
+    };
+
+    return <nav>{renderHeaderLinks()}</nav>;
 }

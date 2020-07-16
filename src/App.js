@@ -3,13 +3,15 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
 
 import Home from "./components/pages/Home";
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
 import Header from "./components/layout/Header";
 import UserContext from "./contexts/UserContext";
 import PrivateRoute from "./routers/PrivateRoute";
 import Dashboard from "./components/pages/Dashboard";
 import NotFound from "./components/pages/NotFound";
+import Tasks from "./components/pages/Tasks";
+import Connections from "./components/pages/Connections";
 
 export default function App() {
     const [userData, setUserData] = useState({
@@ -59,6 +61,11 @@ export default function App() {
                             <PrivateRoute
                                 path="/dashboard"
                                 component={Dashboard}
+                            />
+                            <PrivateRoute path="/tasks" component={Tasks} />
+                            <PrivateRoute
+                                path="/connections"
+                                component={Connections}
                             />
                             <Route component={NotFound} />
                         </Switch>

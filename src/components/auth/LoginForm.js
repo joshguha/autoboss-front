@@ -4,7 +4,7 @@ import Axios from "axios";
 import UserContext from "../../contexts/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
 
-export default function Login() {
+export default function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
