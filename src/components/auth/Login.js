@@ -28,7 +28,7 @@ export default function Login() {
             });
 
             localStorage.setItem("auth-token", loginRes.data.token);
-            history.push("/");
+            history.push("/dashboard");
         } catch (e) {
             e.response.data.msg && setError(e.response.data.msg);
         }
@@ -40,7 +40,6 @@ export default function Login() {
             {error && (
                 <ErrorNotice
                     message={error}
-                    clearError={() => setError(undefined)}
                 />
             )}
             <form className="form" onSubmit={submit}>

@@ -1,10 +1,5 @@
-import React, { useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
-import UserContext from "../../contexts/UserContext";
+import React from "react";
 
 export default function Home() {
-    const { userData } = useContext(UserContext);
-    const history = useHistory();
-    
     return <div>Home</div>;
 }

@@ -6,7 +6,9 @@ import Home from "./components/pages/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Header from "./components/layout/Header";
-import UserContext from "./contexts/UserContext.js";
+import UserContext from "./contexts/UserContext";
+import PrivateRoute from "./routers/PrivateRoute";
+import Dashboard from "./components/pages/Dashboard.js";
 
 export default function App() {
     const [userData, setUserData] = useState({
@@ -53,6 +55,10 @@ export default function App() {
                             <Route exact path="/" component={Home} />
                             <Route path="/login" component={Login} />
                             <Route path="/register" component={Register} />
+                            <PrivateRoute
+                                path="/dashboard"
+                                component={Dashboard}
+                            />
                         </Switch>
                     </div>
                 </UserContext.Provider>
@@ -60,4 +66,3 @@ export default function App() {
         </>
     );
 }
-
