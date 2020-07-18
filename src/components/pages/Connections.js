@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../layout/Sidebar";
-import Connection from "../layout/Connection";
+import Connection from "../chat/Connection";
 
 export default function Connections() {
     return (

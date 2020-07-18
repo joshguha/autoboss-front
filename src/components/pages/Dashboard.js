@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../layout/Sidebar";
-import Metrics from "../layout/Metrics";
-import Notifications from "../layout/Notifications";
+import Metrics from "../dashboard/Metrics";
+import Notifications from "../dashboard/Notifications";
 
 export default function Dashboard() {
     return (
