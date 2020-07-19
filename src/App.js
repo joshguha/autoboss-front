@@ -12,6 +12,7 @@ import Dashboard from "./components/pages/Dashboard";
 import NotFound from "./components/pages/NotFound";
 import Tasks from "./components/pages/Tasks";
 import Connections from "./components/pages/Connections";
+import Chatroom from "./components/pages/Chatroom";
 
 export default function App() {
     const [userData, setUserData] = useState({
@@ -67,6 +68,7 @@ export default function App() {
                                 path="/connections"
                                 component={Connections}
                             />
+                            <PrivateRoute path="/chat" component={Chatroom} />
                             <Route component={NotFound} />
                         </Switch>
                     </div>

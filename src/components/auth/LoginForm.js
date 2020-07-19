@@ -4,7 +4,7 @@ import Axios from "axios";
 import UserContext from "../../contexts/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
 
-export default function LoginForm() {
+export default function LoginForm(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -27,7 +27,9 @@ export default function LoginForm() {
                 user: loginRes.data.user,
             });
             localStorage.setItem("auth-token", loginRes.data.token);
-            history.push("/dashboard");
+            if (!props.private) {
+                history.push("/dashboard");
+            }
         } catch (e) {
             e.response.data.msg && setError(e.response.data.msg);
         }
