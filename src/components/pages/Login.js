@@ -3,7 +3,7 @@ import LoginForm from "../auth/LoginForm";
 
 export default function Login() {
     return (
-        <div>
+        <div className="narrow-container">
             <LoginForm />
         </div>
     );

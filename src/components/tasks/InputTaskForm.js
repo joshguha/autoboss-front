@@ -29,7 +29,7 @@ export default function InputTaskForm() {
             );
             if (taskRes.data) {
                 setDescription("");
-
+                setDueDate();
                 setTasksData([...tasksData, taskRes.data]);
             }
         } catch (e) {
@@ -39,11 +39,15 @@ export default function InputTaskForm() {
     };
 
     return (
-        <div>
-            <ErrorNotice message={error} />
-            <form className="form" onSubmit={submit}>
-                <label htmlFor="task-description">Description</label>
+        <div className="form">
+            <h2>Add a task</h2>
+
+            <form onSubmit={submit}>
+                <label className="form__label" htmlFor="task-description">
+                    Description
+                </label>
                 <textarea
+                    className="form__input input-task-form__text-area"
                     rows="4"
                     cols="50"
                     id="task-description"
@@ -51,19 +55,25 @@ export default function InputTaskForm() {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 />
-                <label htmlFor="due-date-picker">Due</label>
-                <DateTimePicker
-                    id="due-date-picker"
-                    disableClock={true}
-                    value={dueDate}
-                    format={"d/M/y h:mm a"}
-                    onChange={(dueDate) => setDueDate(dueDate)}
-                />
-                <input
-                    disabled={description.trim().length === 0}
-                    type="submit"
-                    value="+"
-                />
+                <label className="form__label" htmlFor="due-date-picker">
+                    Due
+                </label>
+                <div className="input-task-form__container">
+                    <DateTimePicker
+                        id="due-date-picker"
+                        disableClock={true}
+                        value={dueDate}
+                        format={"d/M/y h:mm a"}
+                        onChange={(dueDate) => setDueDate(dueDate)}
+                    />
+                    <input
+                        className="input-task-form__button"
+                        disabled={description.trim().length === 0}
+                        type="submit"
+                        value="+ Add Task"
+                    />
+                </div>
+                <ErrorNotice message={error} />
             </form>
         </div>
     );

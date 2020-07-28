@@ -13,6 +13,7 @@ export default function LoginForm(props) {
 
     const submit = async (e) => {
         e.preventDefault();
+        setPassword("");
         try {
             const loginRes = await Axios.post(
                 "http://localhost:5000/users/login",
@@ -31,26 +32,36 @@ export default function LoginForm(props) {
                 history.push("/dashboard");
             }
         } catch (e) {
-            e.response.data.msg && setError(e.response.data.msg);
+            if (e.response.data.msg) {
+                e.response.data.msg && setError(e.response.data.msg);
+            }
         }
     };
 
     return (
-        <div className="page">
+        <div>
             <h2>Log in</h2>
             {error && <ErrorNotice message={error} />}
             <form className="form" onSubmit={submit}>
-                <label htmlFor="login-email">Email</label>
+                <label className="form__label" htmlFor="login-email">
+                    Email
+                </label>
                 <input
+                    className="form__input"
                     id="login-email"
                     type="email"
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <label htmlFor="login-password">Password</label>
+                <label className="form__label" htmlFor="login-password">
+                    Password
+                </label>
                 <input
+                    className="form__input"
                     id="login-password"
                     type="password"
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
 

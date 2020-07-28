@@ -1,0 +1,38 @@
+.sidebar {
+    background-color: $off-black;
+    box-shadow: rgba(0, 0, 0, 0.53) -6px 13px 5px 3px;
+    color: white;
+    flex: 1;
+    margin: 0 $s-size $m-size 0;
+    padding: $m-size $s-size;
+}
+
+.sidebar__chatroom {
+    margin-bottom: $s-size;
+}
+
+.sidebar__profile {
+    height: 100px;
+    margin-top: $s-size;
+}
+
+.sidebar__messaging {
+    display: flex;
+}
+
+.sidebar__messaging button {
+    color: #2199df;
+    font-size: $m-size;
+    padding: 0 $s-size;
+}
+
+.sidebar__messaging button :focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.sidebar__messaging button {
+    color: #2199df;
+    font-size: $m-size;
+    padding: 0 $s-size;
+}

@@ -3,7 +3,7 @@ import RegisterForm from "../auth/RegisterForm";
 
 export default function Register() {
     return (
-        <div>
+        <div className="narrow-container">
             <RegisterForm />
         </div>
     );

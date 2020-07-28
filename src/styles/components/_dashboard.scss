@@ -1,0 +1,35 @@
+.autoboss {
+    background-color: $off-black;
+    box-shadow: rgba(0, 0, 0, 0.53) -6px 13px 5px 3px;
+    color: white;
+    padding: $m-size $s-size;
+    margin-bottom: $m-size;
+    text-align: center;
+}
+
+.autoboss__text {
+    margin: auto;
+    max-width: 90%;
+    min-height: 100px;
+    margin-bottom: $m-size;
+}
+
+.metrics {
+    align-items: center;
+    background-color: $off-black;
+    box-shadow: rgba(0, 0, 0, 0.53) -6px 13px 5px 3px;
+    color: white;
+    display: flex;
+    padding: $m-size $s-size;
+    margin-bottom: $m-size;
+}
+
+.metrics__pie {
+    margin-right: $s-size;
+    padding: 0 $s-size;
+    width: 200px;
+}
+
+.metrics__text {
+    margin: auto;
+}

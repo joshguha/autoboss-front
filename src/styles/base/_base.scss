@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #2199df;
+    text-decoration: unset;
+}
+
+ul {
+    margin-left: 1.5rem;
+    list-style: none;
+}
+
+button,
+input[type="submit"] {
+    border: none;
+    background: none;
+    color: unset;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* General */
+
+body {
+    font-family: "Roboto", sans-serif;
+    height: auto;
+    min-height: 100%;
+}
+
+html,
+#root {
+    height: auto;
+    min-height: 100%;
+}
+
+.narrow-container {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+}
+
+.box {
+    background-color: $off-black;
+    box-shadow: rgba(0, 0, 0, 0.53) -6px 13px 5px 3px;
+    color: white;
+    padding: $m-size $s-size;
+    margin-bottom: $m-size;
+}
+
+.page {
+    background-color: $off-white;
+    height: auto;
+    min-height: 100%;
+    padding: $m-size $m-size $l-size $m-size;
+}
+
+.error-notice {
+    color: red;
+    margin: 1rem, 0;
+    padding: 0.5rem;
+}
+
+.content {
+    flex: 4;
+}
+
+
+.delete {
+    cursor: pointer;
+    height: 20px;
+    margin-top: $s-size;
+}

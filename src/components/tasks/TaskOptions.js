@@ -51,9 +51,12 @@ export default function TaskOptions() {
     }, [sortBy, order, incomplete, tasksData, setFilteredTasksData]);
 
     return (
-        <div>
-            <label htmlFor="sort-by">Sort by: </label>
+        <div className="task-options box">
+            <label className="task-options__label" htmlFor="sort-by">
+                Sort by:
+            </label>
             <select
+                className="task-options__select"
                 name="sort-by"
                 id="sort-by"
                 value={sortBy}
@@ -69,9 +72,12 @@ export default function TaskOptions() {
                 <option value="date-created">Date created</option>
                 <option value="date-due">Date due</option>
             </select>
-            <label htmlFor="order">Order: </label>
+            <label className="task-options__label" htmlFor="order">
+                Order:
+            </label>
             {sortBy === "date-created" ? (
                 <select
+                    className="task-options__select"
                     name="order"
                     id="order"
                     value={order}
@@ -82,6 +88,7 @@ export default function TaskOptions() {
                 </select>
             ) : (
                 <select
+                    className="task-options__select"
                     name="order"
                     id="order"
                     value={order}
@@ -92,6 +99,7 @@ export default function TaskOptions() {
                 </select>
             )}
             <select
+                className="task-options__select"
                 name="incomplete"
                 id="incomplete"
                 value={incomplete}

@@ -1,15 +1,15 @@
 import React from "react";
 import Sidebar from "../layout/Sidebar";
 import Metrics from "../dashboard/Metrics";
-import Notifications from "../dashboard/Notifications";
+import AutoBoss from "../dashboard/AutoBoss";
 
 export default function Dashboard() {
     return (
-        <div>
+        <div className="container">
             <Sidebar />
-            <div>
+            <div className="content">
+                <AutoBoss />
                 <Metrics />
-                <Notifications />
             </div>
         </div>
     );

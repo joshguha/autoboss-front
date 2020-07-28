@@ -4,9 +4,9 @@ import AuthOptions from "../auth/AuthOptions";
 
 export default function Header() {
     return (
-        <header id="header">
+        <header className="header">
             <Link to="/">
-                <h1>AutoBoss</h1>
+                <h1 className="header__title">AutoBoss</h1>
             </Link>
             <AuthOptions />
         </header>

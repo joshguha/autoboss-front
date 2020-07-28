@@ -1,0 +1,42 @@
+.found-user {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.found-user__container {
+    display: flex;
+    justify-content: space-between;
+    font-size: $s-size;
+}
+
+.found-user__button {
+    background-color: $off-black;
+    border-radius: 8px;
+    color: white;
+    font-size: $s-size;
+    margin: $s-size 0;
+    padding: 0.5rem 0.8rem;
+}
+
+.user-profile {
+    display: flex;
+    justify-content: space-between;
+    font-size: $s-size;
+    margin: 0 0.4rem $m-size;
+}
+
+.user-profile__container {
+    display: flex;
+    justify-content: space-between;
+    font-size: $s-size;
+}
+
+.user-profile__button {
+    background-color: $off-black;
+    border-radius: 8px;
+    color: white;
+    font-size: $s-size;
+    margin: $s-size 0;
+    padding: 0.5rem 0.8rem;
+}

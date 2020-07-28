@@ -43,56 +43,64 @@ export default function RegisterForm() {
             });
 
             localStorage.setItem("auth-token", loginRes.data.token);
-            history.push("/");
+            history.push("/dashboard");
         } catch (e) {
             e.response.data.msg && setError(e.response.data.msg);
         }
     };
 
     return (
-        <div className="page">
+        <div>
             <h2>Register</h2>
-            {error && (
-                <ErrorNotice
-                    message={error}
-                />
-            )}
             <form className="form" onSubmit={submit}>
-                <label htmlFor="register-first-name">First name</label>
+                <label className="form__label" htmlFor="register-first-name">
+                    First name
+                </label>
                 <input
+                    className="form__input"
                     id="register-first-name"
                     type="text"
                     onChange={(e) => setFirstName(e.target.value)}
                 />
 
-                <label htmlFor="register-last-name">Last name</label>
+                <label className="form__label" htmlFor="register-last-name">
+                    Last name
+                </label>
                 <input
+                    className="form__input"
                     id="register-last-name"
                     type="text"
                     onChange={(e) => setLastName(e.target.value)}
                 />
 
-                <label htmlFor="register-email">Email</label>
+                <label className="form__label" htmlFor="register-email">
+                    Email
+                </label>
                 <input
+                    className="form__input"
                     id="register-email"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <label htmlFor="register-password">Password</label>
+                <label className="form__label" htmlFor="register-password">
+                    Password
+                </label>
                 <input
+                    className="form__input"
                     id="register-password"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <input
+                    className="form__input"
                     type="password"
                     placeholder="Verify password"
                     onChange={(e) => setPasswordCheck(e.target.value)}
                 />
+                {error && <ErrorNotice message={error} />}
 
                 <input type="submit" value="Register" />
-
             </form>
         </div>
     );

@@ -83,13 +83,15 @@ export default function Tasks() {
                 setFilteredTasksData,
             }}
         >
-            <div>
+            <div className="container">
                 <Sidebar />
-                <div>
+                <div className="content">
                     <InputTaskForm />
                     <TaskOptions />
                     {filteredTasksData.length === 0 ? (
-                        <p>No tasks to show</p>
+                        <div className="box">
+                            <p className="task__message">No tasks to show</p>
+                        </div>
                     ) : (
                         filteredTasksData.map((task, index) => {
                             return (

@@ -1,0 +1,29 @@
+.form__input {
+    display: block;
+    margin-bottom: $s-size;
+}
+.form__label {
+    display: block;
+    margin-bottom: $s-size;
+}
+.form__input {
+    border: 1px solid #c2c2c2;
+    border-radius: 8px;
+    background: #f0f0f0;
+    font-size: $s-size;
+    padding: 0.5rem;
+    width: 100%;
+}
+.form__input:focus {
+    border: 1px solid #50a4e9;
+    box-shadow: inset 0 0 5px rgba(38, 142, 228, 0.5);
+    outline: none;
+}
+.form input[type="submit"] {
+    background-color: $off-black;
+    border-radius: 8px;
+    color: white;
+    font-size: $s-size;
+    margin: $s-size 0;
+    padding: 0.5rem 0.8rem;
+}

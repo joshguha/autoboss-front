@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
+import { useBeforeunload } from "react-beforeunload";
 
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
@@ -13,11 +14,29 @@ import NotFound from "./components/pages/NotFound";
 import Tasks from "./components/pages/Tasks";
 import Connections from "./components/pages/Connections";
 import Chatroom from "./components/pages/Chatroom";
+import CreateChat from "./components/pages/CreateChat";
+import ProfilePicture from "./components/pages/ProfilePicture";
+
+import "./styles/styles.scss";
 
 export default function App() {
     const [userData, setUserData] = useState({
         token: undefined,
         user: undefined,
+    });
+
+    useBeforeunload(async () => {
+        if (userData.token) {
+            const res = await Axios.post(
+                "http://localhost:5000/users/logout",
+                null,
+                {
+                    headers: { "x-auth-token": userData.token },
+                }
+            );
+            if (res.data) console.log(res.data);
+        }
+        return;
     });
 
     useEffect(() => {
@@ -54,7 +73,7 @@ export default function App() {
             <BrowserRouter>
                 <UserContext.Provider value={{ userData, setUserData }}>
                     <Header />
-                    <div>
+                    <div className="page">
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route path="/login" component={Login} />
@@ -69,6 +88,14 @@ export default function App() {
                                 component={Connections}
                             />
                             <PrivateRoute path="/chat" component={Chatroom} />
+                            <PrivateRoute
+                                path="/create-chat"
+                                component={CreateChat}
+                            />
+                            <PrivateRoute
+                                path="/profilepic"
+                                component={ProfilePicture}
+                            />
                             <Route component={NotFound} />
                         </Switch>
                     </div>
