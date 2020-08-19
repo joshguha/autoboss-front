@@ -16,7 +16,7 @@ export default function Connections() {
     const removeUser = async () => {
         try {
             const res = await Axios.delete(
-                "http://localhost:5000/users/connect",
+                "https://autoboss-back.herokuapp.com/users/connect",
                 {
                     data: { _id: userToDelete._id },
                     headers: { "x-auth-token": userData.token },

@@ -28,7 +28,7 @@ export default function App() {
     useBeforeunload(async () => {
         if (userData.token) {
             const res = await Axios.post(
-                "http://localhost:5000/users/logout",
+                "https://autoboss-back.herokuapp.com/users/logout",
                 null,
                 {
                     headers: { "x-auth-token": userData.token },
@@ -48,13 +48,13 @@ export default function App() {
                 token = "";
             }
             const tokenRes = await Axios.post(
-                "http://localhost:5000/users/tokenIsValid",
+                "https://autoboss-back.herokuapp.com/users/tokenIsValid",
                 null,
                 { headers: { "x-auth-token": token } }
             );
             if (tokenRes.data) {
                 const userRes = await Axios.get(
-                    "http://localhost:5000/users/",
+                    "https://autoboss-back.herokuapp.com/users/",
                     { headers: { "x-auth-token": token } }
                 );
 

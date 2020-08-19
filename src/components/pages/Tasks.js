@@ -30,7 +30,7 @@ export default function Tasks() {
         );
 
         try {
-            const url = `http://localhost:5000/tasks/${alteredTask._id}`;
+            const url = `https://autoboss-back.herokuapp.com/tasks/${alteredTask._id}`;
             await Axios.patch(
                 url,
                 {
@@ -47,7 +47,7 @@ export default function Tasks() {
     };
 
     const deleteTask = async (taskToDelete) => {
-        const url = `http://localhost:5000/tasks/${taskToDelete._id}`;
+        const url = `https://autoboss-back.herokuapp.com/tasks/${taskToDelete._id}`;
         const deleteRes = await Axios.delete(url, {
             headers: { "x-auth-token": userData.token },
         });
@@ -63,7 +63,7 @@ export default function Tasks() {
 
     useEffect(() => {
         const retrieveTasks = async () => {
-            const tasksRes = await Axios.get("http://localhost:5000/tasks/", {
+            const tasksRes = await Axios.get("https://autoboss-back.herokuapp.com/tasks/", {
                 headers: { "x-auth-token": userData.token },
             });
 

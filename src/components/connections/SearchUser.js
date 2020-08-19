@@ -16,7 +16,7 @@ export default function SearchUser({ setFoundUser }) {
                 return;
             }
             const res = await Axios.post(
-                "http://localhost:5000/users/search",
+                "https://autoboss-back.herokuapp.com/users/search",
                 {
                     email: searchField,
                 },

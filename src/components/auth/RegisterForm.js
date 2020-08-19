@@ -27,10 +27,10 @@ export default function RegisterForm() {
                 firstName,
                 lastName,
             };
-            await Axios.post("http://localhost:5000/users/register", newUser);
+            await Axios.post("https://autoboss-back.herokuapp.com/users/register", newUser);
 
             const loginRes = await Axios.post(
-                "http://localhost:5000/users/login",
+                "https://autoboss-back.herokuapp.com/users/login",
                 {
                     email,
                     password,

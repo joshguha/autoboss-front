@@ -11,7 +11,7 @@ const InfoBar = ({ name, _id }) => {
 
     const action = async () => {
         try {
-            const res = await Axios.delete("http://localhost:5000/chat", {
+            const res = await Axios.delete("https://autoboss-back.herokuapp.com/chat", {
                 data: { _id },
                 headers: { "x-auth-token": userData.token },
             });

@@ -16,7 +16,7 @@ export default function FoundUser({ foundUser, setFoundUser }) {
     const connect = async () => {
         try {
             const res = await Axios.post(
-                "http://localhost:5000/users/connect",
+                "https://autoboss-back.herokuapp.com/users/connect",
                 {
                     connectWith: _id,
                 },

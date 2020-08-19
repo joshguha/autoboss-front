@@ -10,7 +10,7 @@ export default function PendingConnectionsList() {
     const accept = async (user, setIsButton, setIsButton2, setMessage) => {
         try {
             const res = await Axios.post(
-                "http://localhost:5000/users/connect",
+                "https://autoboss-back.herokuapp.com/users/connect",
                 {
                     connectWith: user._id,
                 },
@@ -46,7 +46,7 @@ export default function PendingConnectionsList() {
     const decline = async (user, setIsButton, setIsButton2, setMessage) => {
         try {
             const res = await Axios.post(
-                "http://localhost:5000/users/connect",
+                "https://autoboss-back.herokuapp.com/users/connect",
                 {
                     decline: user._id,
                 },

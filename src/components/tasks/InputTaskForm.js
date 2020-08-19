@@ -18,7 +18,7 @@ export default function InputTaskForm() {
         setError("");
         try {
             const taskRes = await Axios.post(
-                "http://localhost:5000/tasks/",
+                "https://autoboss-back.herokuapp.com/tasks/",
                 {
                     description,
                     due: dueDate,

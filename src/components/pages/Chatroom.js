@@ -20,7 +20,7 @@ export default function Chatroom() {
 
     // Connect to server socket.io and retrieve chatroom data
     useEffect(() => {
-        socket = io("http://localhost:5000/");
+        socket = io("https://autoboss-back.herokuapp.com/");
         socket.emit(
             "join",
             { userID: userData.user._id, pathname },

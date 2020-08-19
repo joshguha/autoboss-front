@@ -27,7 +27,7 @@ export default function CreateChat() {
                 return;
             }
             const res = await Axios.post(
-                "http://localhost:5000/chat/",
+                "https://autoboss-back.herokuapp.com/chat/",
                 {
                     roomName,
                     connectionsAdded,

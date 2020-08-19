@@ -40,7 +40,7 @@ export default function ProfilePicture() {
             //             type: "image/png",
             //         });
             //         const uploadConfig = await Axios.get(
-            //             "http://localhost:5000/users/avatar/upload",
+            //             "https://autoboss-back.herokuapp.com/users/avatar/upload",
             //             {
             //                 headers: { "x-auth-token": userData.token },
             //             }

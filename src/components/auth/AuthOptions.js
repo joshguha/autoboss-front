@@ -19,13 +19,13 @@ export default function AuthOptions() {
                 token = "";
             }
             const tokenRes = await Axios.post(
-                "http://localhost:5000/users/tokenIsValid",
+                "https://autoboss-back.herokuapp.com/users/tokenIsValid",
                 null,
                 { headers: { "x-auth-token": token } }
             );
             if (tokenRes.data) {
                 const userRes = await Axios.get(
-                    "http://localhost:5000/users/",
+                    "https://autoboss-back.herokuapp.com/users/",
                     { headers: { "x-auth-token": token } }
                 );
 
@@ -42,7 +42,7 @@ export default function AuthOptions() {
     };
     const logout = async () => {
         if (userData.token) {
-            await Axios.post("http://localhost:5000/users/logout", null, {
+            await Axios.post("https://autoboss-back.herokuapp.com/users/logout", null, {
                 headers: { "x-auth-token": userData.token },
             });
         }
